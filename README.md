@@ -12,7 +12,7 @@ Note you can use this concepts to a GraphQL API as well. Open activestrorage sou
 
 Install dependencies
 
-```
+```bash
 cd client
 yarn install
 ```
@@ -20,10 +20,12 @@ yarn install
 ### Server - Rails App
 
 1. Install dependencies
-```
+
+```bash
 cd server
 bundle install
 ```
+
 2. Setup your secrets
 
 ```bash
@@ -45,14 +47,14 @@ secret_key_base: <value>
 ```
 ## Running
 
-```
+```bash
 cd client
 yarn start
 ```
 
 In another terminal
 
-```
+```bash
 cd server
 rails s -p 3001
 ```
