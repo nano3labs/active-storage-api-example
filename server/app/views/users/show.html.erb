@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <strong>Last name string:</strong>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Avatar:</strong>
+  <%= image_tag @user.avatar.variant(resize: '400x400') %>
+</p>
+
+<p>
+  <strong>Files:</strong>
+  <% @user.files.each do |file| %>
+    <% if file.previewable? %>
+      <%= image_tag file.preview(resize: '400x400') %>
+    <% elsif file.variable? %>
+      <%= image_tag file.variant(resize: '400x400') %>
+    <% elsif file.image? %>
+      <%= image_tag file %>
+    <% else %>
+      <%= file.filename %>
+    <% end %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
